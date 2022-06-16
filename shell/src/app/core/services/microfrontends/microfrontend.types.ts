@@ -1,4 +1,8 @@
-import { LoadRemoteModuleOptions } from "src/app/utils/federation-utils";
+export interface LoadRemoteModuleOptions {
+  remoteEntry: string;
+  remoteName: string;
+  exposedModule: string;
+}
 
 export type Microfrontend = LoadRemoteModuleOptions & {
   displayName: string;

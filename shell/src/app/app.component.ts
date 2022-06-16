@@ -1,18 +1,19 @@
 import {
-  ViewContainerRef,
+  AfterViewInit,
   Component,
   ComponentFactoryResolver,
-  OnInit,
-  AfterViewInit,
   Injector,
+  OnDestroy,
+  OnInit,
   ViewChild,
-  OnDestroy
+  ViewContainerRef
 } from '@angular/core';
 import { RouteConfigLoadEnd, RouteConfigLoadStart, Router } from '@angular/router';
-import { fromEvent, Subscription } from 'rxjs';
+import { Subscription, fromEvent } from 'rxjs';
+
 import { AuthService } from './core/services/auth/auth.service';
-import { loadRemoteModule } from './utils/federation-utils';
 import { environment } from 'src/environments/environment';
+import { loadRemoteModule } from '@angular-architects/module-federation';
 
 @Component({
   selector: 'app-root',
